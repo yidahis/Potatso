@@ -18,7 +18,7 @@ private let pageSize = 20
 
 class CloudViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var ruleSets: [RuleSet] = []
+    var ruleSets: [TRuleSet] = []
     var page = 0
 
     override func viewDidLoad() {
@@ -68,7 +68,7 @@ class CloudViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
 
-    func showRuleSetConfiguration(_ ruleSet: RuleSet?) {
+    func showRuleSetConfiguration(_ ruleSet: TRuleSet?) {
         let vc = RuleSetConfigurationViewController(ruleSet: ruleSet)
         navigationController?.pushViewController(vc, animated: true)
     }

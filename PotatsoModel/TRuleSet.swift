@@ -29,15 +29,15 @@ extension RuleSetError: CustomStringConvertible {
     
 }
 
-public final class RuleSet: BaseModel {
-    public dynamic var editable = true
-    public dynamic var name = ""
-    public dynamic var remoteUpdatedAt: TimeInterval = Date().timeIntervalSince1970
-    public dynamic var desc = ""
-    public dynamic var ruleCount = 0
-    public dynamic var rulesJSON = ""
-    public dynamic var isSubscribe = false
-    public dynamic var isOfficial = false
+public final class TRuleSet: BaseModel {
+    @objc public dynamic var editable = true
+    @objc public dynamic var name = ""
+    @objc public dynamic var remoteUpdatedAt: TimeInterval = Date().timeIntervalSince1970
+    @objc public dynamic var desc = ""
+    @objc public dynamic var ruleCount = 0
+    @objc public dynamic var rulesJSON = ""
+    @objc public dynamic var isSubscribe = false
+    @objc public dynamic var isOfficial = false
 
     fileprivate var cachedRules: [Rule]? = nil
 
@@ -98,15 +98,15 @@ public final class RuleSet: BaseModel {
     }
 }
 
-extension RuleSet {
+extension TRuleSet {
     
-    public override static func indexedProperties() -> [String] {
-        return ["name"]
-    }
+//    public override static func indexedProperties() -> [String] {
+//        return ["name"]
+//    }
     
 }
 
-extension RuleSet {
+extension TRuleSet {
     
     public convenience init(dictionary: [String: AnyObject], inRealm realm: Realm) throws {
         self.init()
@@ -114,8 +114,8 @@ extension RuleSet {
             throw RuleSetError.invalidRuleSet
         }
         self.name = name
-        if realm.objects(RuleSet).filter("name = '\(name)'").first != nil {
-            self.name = "\(name) \(RuleSet.dateFormatter.string(from: Date()))"
+        if realm.objects(TRuleSet.self).filter("name = '\(name)'").first != nil {
+            self.name = "\(name) \(TRuleSet.dateFormatter.string(from: Date()))"
         }
         guard let rulesStr = dictionary["rules"] as? [String] else {
             throw RuleSetError.invalidRuleSet
@@ -125,6 +125,6 @@ extension RuleSet {
     
 }
 
-public func ==(lhs: RuleSet, rhs: RuleSet) -> Bool {
+public func ==(lhs: TRuleSet, rhs: TRuleSet) -> Bool {
     return lhs.uuid == rhs.uuid
 }

@@ -65,10 +65,10 @@ extension Proxy: CloudKitRecord {
     }
 }
 
-extension RuleSet: CloudKitRecord {
+extension TRuleSet: CloudKitRecord {
 
     public static var recordType: String {
-        return "RuleSet"
+        return "TRuleSet"
     }
 
     public static var keys: [String] {
@@ -80,8 +80,8 @@ extension RuleSet: CloudKitRecord {
     }
 
     public func toCloudKitRecord() -> CKRecord {
-        let record = CKRecord(recordType: RuleSet.recordType, recordID: recordId)
-        for key in RuleSet.keys {
+        let record = CKRecord(recordType: TRuleSet.recordType, recordID: recordId)
+        for key in TRuleSet.keys {
             record.setValue(self.value(forKey: key), forKey: key)
         }
         return record
@@ -89,7 +89,7 @@ extension RuleSet: CloudKitRecord {
 
     public static func fromCloudKitRecord(_ record: CKRecord) -> Self {
         let ruleset = self.init()
-        for key in RuleSet.keys {
+        for key in TRuleSet.keys {
             if let v = record.value(forKey: key) {
                 ruleset.setValue(v, forKey: key)
             }
@@ -140,7 +140,7 @@ extension ConfigurationGroup: CloudKitRecord {
         }
         if let rulesUUIDs = record["ruleSets"] as? String {
             let uuids = rulesUUIDs.components(separatedBy: ",")
-            let rules = uuids.flatMap({ realm.objects(RuleSet.self).filter("uuid = '\($0)'").first })
+            let rules = uuids.flatMap({ realm.objects(TRuleSet.self).filter("uuid = '\($0)'").first })
             
             for r in rules {
                 group.ruleSets.append(r)
@@ -157,8 +157,8 @@ extension CKRecord {
         switch recordType {
         case "Proxy":
             type = Proxy.self
-        case "RuleSet":
-            type = RuleSet.self
+        case "TRuleSet":
+            type = TRuleSet.self
         case "ConfigurationGroup":
             type = ConfigurationGroup.self
         default:
@@ -179,8 +179,8 @@ func changeLocalRecord(_ record: CKRecord) throws {
     switch record.recordType {
     case "Proxy":
         realmObject = Proxy.fromCloudKitRecord(record)
-    case "RuleSet":
-        realmObject = RuleSet.fromCloudKitRecord(record)
+    case "TRuleSet":
+        realmObject = TRuleSet.fromCloudKitRecord(record)
     case "ConfigurationGroup":
         realmObject = ConfigurationGroup.fromCloudKitRecord(record)
     default:
@@ -202,7 +202,7 @@ func changeLocalRecord(_ record: CKRecord) throws {
 func deleteLocalRecord(_ recordID: CKRecordID) throws {
     let id = recordID.recordName
     try DBUtils.hardDelete(id, type: Proxy.self)
-    try DBUtils.hardDelete(id, type: RuleSet.self)
+    try DBUtils.hardDelete(id, type: TRuleSet.self)
     try DBUtils.hardDelete(id, type: ConfigurationGroup.self)
 }
 

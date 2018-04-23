@@ -37,24 +37,24 @@ struct API {
         }
     }
 
-    static func getRuleSets(_ page: Int = 1, count: Int = 20, callback: @escaping (Alamofire.DataResponse<[RuleSet]>) -> Void) {
+    static func getRuleSets(_ page: Int = 1, count: Int = 20, callback: @escaping (Alamofire.DataResponse<[TRuleSet]>) -> Void) {
         DDLogVerbose("API.getRuleSets ===> page: \(page), count: \(count)")
         _ = Alamofire.request(Path.ruleSets.url, method: .get, parameters: ["page": page, "count": count], encoding: URLEncoding.default).responseArray(completionHandler: callback)
     }
 
-    static func getRuleSetDetail(_ uuid: String, callback: @escaping (Alamofire.DataResponse<RuleSet>) -> Void) {
+    static func getRuleSetDetail(_ uuid: String, callback: @escaping (Alamofire.DataResponse<TRuleSet>) -> Void) {
         DDLogVerbose("API.getRuleSetDetail ===> uuid: \(uuid)")
         _ = Alamofire.request(Path.ruleSet(uuid).url, method: .get, parameters: nil, encoding: URLEncoding.default).responseObject(completionHandler: callback)
     }
 
-    static func updateRuleSetListDetail(_ uuids: [String], callback: @escaping  (Alamofire.DataResponse<[RuleSet]>) -> Void) {
+    static func updateRuleSetListDetail(_ uuids: [String], callback: @escaping  (Alamofire.DataResponse<[TRuleSet]>) -> Void) {
         DDLogVerbose("API.updateRuleSetListDetail ===> uuids: \(uuids)")
         _ = Alamofire.request(Path.ruleSetListDetail().url, method: .post, parameters: ["uuids": uuids], encoding: JSONEncoding.default).responseArray(completionHandler: callback)
     }
 
 }
 
-extension RuleSet: Mappable {
+extension TRuleSet: Mappable {
 
     public convenience init?(map: Map) {
         self.init()
@@ -62,9 +62,9 @@ extension RuleSet: Mappable {
             return
         }
         var rules: [Rule] = []
-        if let parsedObject = Mapper<Rule>().mapArray(JSONArray: rulesJSON as! [[String : Any]]){
-            rules.append(contentsOf: parsedObject)
-        }
+        let parsedObject = Mapper<Rule>().mapArray(JSONArray: rulesJSON as! [[String : Any]])
+         rules.append(contentsOf: parsedObject)
+
         self.rules = rules
     }
 
@@ -80,14 +80,14 @@ extension RuleSet: Mappable {
     }
 }
 
-extension RuleSet {
+extension TRuleSet {
 
-    static func addRemoteObject(_ ruleset: RuleSet, update: Bool = true) throws {
+    static func addRemoteObject(_ ruleset: TRuleSet, update: Bool = true) throws {
         ruleset.isSubscribe = true
         ruleset.deleted = false
         ruleset.editable = false
         let id = ruleset.uuid
-        guard let local = DBUtils.get(id, type: RuleSet.self) else {
+        guard let local = DBUtils.get(id, type: TRuleSet.self) else {
             try DBUtils.add(ruleset)
             return
         }
@@ -97,7 +97,7 @@ extension RuleSet {
         try DBUtils.add(ruleset)
     }
 
-    static func addRemoteArray(_ rulesets: [RuleSet], update: Bool = true) throws {
+    static func addRemoteArray(_ rulesets: [TRuleSet], update: Bool = true) throws {
         for ruleset in rulesets {
             try addRemoteObject(ruleset, update: update)
         }
@@ -114,7 +114,7 @@ extension Rule: Mappable {
         guard let actionStr = map.JSON["action"] as? String, let action = RuleAction(rawValue: actionStr) else {
             return nil
         }
-        guard let typeStr = map.JSON["type"] as? String, let type = RuleType(rawValue: typeStr) else {
+        guard let typeStr = map.JSON["type"] as? String, let type = TRuleType(rawValue: typeStr) else {
             return nil
         }
         self.init(type: type, action: action, value: pattern)
@@ -252,9 +252,8 @@ extension Alamofire.DataRequest {
             }
 
             if (JSONToMap != nil) {
-                if let parsedObject = Mapper<T>().mapArray(JSONArray: JSONToMap as! [[String : Any]]){
-                    return .success(parsedObject)
-                }
+                let parsedObject = Mapper<T>().mapArray(JSONArray: JSONToMap as! [[String : Any]])
+                return .success(parsedObject)
             }
 
             let failureReason = "ObjectMapper failed to serialize response."

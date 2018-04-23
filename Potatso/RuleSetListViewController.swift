@@ -17,15 +17,15 @@ private let kRuleSetCellIdentifier = "ruleset"
 
 class RuleSetListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var ruleSets: Results<RuleSet>
-    var chooseCallback: ((RuleSet?) -> Void)?
+    var ruleSets: Results<TRuleSet>
+    var chooseCallback: ((TRuleSet?) -> Void)?
     // Observe Realm Notifications
     var token: RLMNotificationToken?
     var heightAtIndex: [Int: CGFloat] = [:]
 
-    init(chooseCallback: ((RuleSet?) -> Void)? = nil) {
+    init(chooseCallback: ((TRuleSet?) -> Void)? = nil) {
         self.chooseCallback = chooseCallback
-        self.ruleSets = DBUtils.allNotDeleted(RuleSet.self, sorted: "createAt")
+        self.ruleSets = DBUtils.allNotDeleted(TRuleSet.self, sorted: "createAt")
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,7 +38,7 @@ class RuleSetListViewController: UIViewController, UITableViewDataSource, UITabl
         navigationItem.title = "Rule Set".localized()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
         reloadData()
-        token = ruleSets.addNotificationBlock { [unowned self] (changed) in
+        token = ruleSets.observe { [unowned self] (changed) in
             switch changed {
             case let .update(_, deletions: deletions, insertions: insertions, modifications: modifications):
                 self.tableView.beginUpdates()
@@ -58,20 +58,20 @@ class RuleSetListViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        token?.stop()
+        token?.invalidate()
     }
 
     func reloadData() {
-        ruleSets = DBUtils.allNotDeleted(RuleSet.self, sorted: "createAt")
+        ruleSets = DBUtils.allNotDeleted(TRuleSet.self, sorted: "createAt")
         tableView.reloadData()
     }
 
-    func add() {
+    @objc func add() {
         let vc = RuleSetConfigurationViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    func showRuleSetConfiguration(_ ruleSet: RuleSet?) {
+    func showRuleSetConfiguration(_ ruleSet: TRuleSet?) {
         let vc = RuleSetConfigurationViewController(ruleSet: ruleSet)
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -119,13 +119,13 @@ class RuleSetListViewController: UIViewController, UITableViewDataSource, UITabl
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let item: RuleSet
+            let item: TRuleSet
             guard indexPath.row < ruleSets.count else {
                 return
             }
             item = ruleSets[indexPath.row]
             do {
-                try DBUtils.softDelete(item.uuid, type: RuleSet.self)
+                try DBUtils.softDelete(item.uuid, type: TRuleSet.self)
             }catch {
                 self.showTextHUD("\("Fail to delete item".localized()): \((error as NSError).localizedDescription)", dismissAfterDelay: 1.5)
             }

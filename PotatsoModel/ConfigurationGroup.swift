@@ -31,12 +31,12 @@ extension ConfigurationGroupError: CustomStringConvertible {
 
 
 open class ConfigurationGroup: BaseModel {
-    open dynamic var editable = true
-    open dynamic var name = ""
-    open dynamic var defaultToProxy = true
-    open dynamic var dns = ""
+    @objc open dynamic var editable = true
+    @objc open dynamic var name = ""
+    @objc open dynamic var defaultToProxy = true
+    @objc open dynamic var dns = ""
     open var proxies = List<Proxy>()
-    open var ruleSets = List<RuleSet>()
+    open var ruleSets = List<TRuleSet>()
     
     open override static func indexedProperties() -> [String] {
         return ["name"]
@@ -61,16 +61,16 @@ extension ConfigurationGroup {
             throw ConfigurationGroupError.invalidConfigurationGroup
         }
         self.name = name
-        if realm.objects(RuleSet).filter("name = '\(name)'").first != nil {
+        if realm.objects(TRuleSet.self).filter("name = '\(name)'").first != nil {
             self.name = "\(name) \(ConfigurationGroup.dateFormatter.string(from: Date()))"
         }
-        if let proxyName = dictionary["proxy"] as? String, let proxy = realm.objects(Proxy).filter("name = '\(proxyName)'").first {
+        if let proxyName = dictionary["proxy"] as? String, let proxy = realm.objects(Proxy.self).filter("name = '\(proxyName)'").first {
             self.proxies.removeAll()
             self.proxies.append(proxy)
         }
         if let ruleSetsName = dictionary["ruleSets"] as? [String] {
             for ruleSetName in ruleSetsName {
-                if let ruleSet = realm.objects(RuleSet).filter("name = '\(ruleSetName)'").first {
+                if let ruleSet = realm.objects(TRuleSet.self).filter("name = '\(ruleSetName)'").first {
                     self.ruleSets.append(ruleSet)
                 }
             }

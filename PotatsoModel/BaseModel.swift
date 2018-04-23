@@ -35,11 +35,11 @@ public func setupDefaultReaml() {
 
 
 open class BaseModel: Object {
-    open dynamic var uuid = UUID().uuidString
-    open dynamic var createAt = Date().timeIntervalSince1970
-    open dynamic var updatedAt = Date().timeIntervalSince1970
-    open dynamic var deleted = false
-    open dynamic var synced = false
+    @objc open dynamic var uuid = UUID().uuidString
+    @objc open dynamic var createAt = Date().timeIntervalSince1970
+    @objc open dynamic var updatedAt = Date().timeIntervalSince1970
+    @objc open dynamic var deleted = false
+    @objc open dynamic var synced = false
 
     override open static func primaryKey() -> String? {
         return "uuid"
@@ -59,7 +59,7 @@ open class BaseModel: Object {
 
 // MARK: - Migration
 func migrateRulesList(_ migration: Migration, oldSchemaVersion: UInt64) {
-    migration.enumerateObjects(ofType: RuleSet.className(), { (oldObject, newObject) in
+    migration.enumerateObjects(ofType: TRuleSet.className(), { (oldObject, newObject) in
         if oldSchemaVersion > 11 {
             guard let deleted = oldObject!["deleted"] as? Bool, !deleted else {
                 return

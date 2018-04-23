@@ -64,7 +64,7 @@ class ConfigGroupChooseWindow: UIWindow {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func onStatusBarFrameChange() {
+    @objc func onStatusBarFrameChange() {
         frame = UIScreen.main.bounds
     }
 
@@ -94,7 +94,7 @@ class ConfigGroupChooseVC: UIViewController, UITableViewDataSource, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
-        token = groups.addNotificationBlock { [unowned self] (changed) in
+        token = groups.observe { [unowned self] (changed) in
             switch changed {
             case let .update(_, deletions: deletions, insertions: insertions, modifications: modifications):
                 self.tableView.beginUpdates()
@@ -113,10 +113,10 @@ class ConfigGroupChooseVC: UIViewController, UITableViewDataSource, UITableViewD
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        token?.stop()
+        token?.invalidate()
     }
 
-    func onVPNStatusChanged() {
+    @objc func onVPNStatusChanged() {
         updateUI()
     }
 
@@ -129,7 +129,7 @@ class ConfigGroupChooseVC: UIViewController, UITableViewDataSource, UITableViewD
         ConfigGroupChooseManager.shared.hide()
     }
 
-    func onTap() {
+    @objc func onTap() {
         ConfigGroupChooseManager.shared.hide()
     }
 

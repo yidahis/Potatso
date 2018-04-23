@@ -16,9 +16,9 @@ private let kRuleCellIdentifier = "rule"
 
 class CloudDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var ruleSet: RuleSet
+    var ruleSet: TRuleSet
 
-    init(ruleSet: RuleSet) {
+    init(ruleSet: TRuleSet) {
         self.ruleSet = ruleSet
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,21 +64,21 @@ class CloudDetailViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func isExist(_ uuid: String) -> Bool {
-        return defaultRealm.objects(RuleSet).filter("uuid == '\(uuid)' && deleted == false").count > 0
+        return defaultRealm.objects(TRuleSet.self).filter("uuid == '\(uuid)' && deleted == false").count > 0
     }
 
-    func subscribe() {
+    @objc func subscribe() {
         let uuid = ruleSet.uuid
         if isExist(uuid) {
             do {
-                try DBUtils.softDelete([uuid], type: RuleSet.self)
+                try DBUtils.softDelete([uuid], type: TRuleSet.self)
             }catch {
                 self.showTextHUD("Fail to unsubscribe".localized(), dismissAfterDelay: 1.0)
                 return
             }
         }else {
             do {
-                try RuleSet.addRemoteObject(ruleSet)
+                try TRuleSet.addRemoteObject(ruleSet)
             }catch {
                 self.showTextHUD("Fail to subscribe".localized(), dismissAfterDelay: 1.0)
                 return

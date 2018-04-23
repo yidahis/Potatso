@@ -25,16 +25,16 @@ def socket
 end
 
 def model
-    pod 'RealmSwift'
+    pod 'RealmSwift', '~> 3.3.2'
 end
 
 target "Potatso" do
-    pod 'Aspects', :path => "./Library/Aspects/"
+    pod 'Aspects'
     pod 'Cartography'
     pod 'AsyncSwift'
     pod 'SwiftColor'
     pod 'Appirater'
-    pod 'Eureka', :path => "./Library/Eureka/"
+    pod 'Eureka'
     pod 'MBProgressHUD'
     pod 'CallbackURLKit', :path => "./Library/CallbackURLKit"
     pod 'ICDMaterialActivityIndicatorView', '~> 0.1.0'
@@ -45,7 +45,7 @@ target "Potatso" do
     pod 'ObjectMapper'
     pod 'CocoaLumberjack/Swift', '~> 3.0.0'
     pod 'Helpshift', '5.6.1'
-    pod 'PSOperations', '~> 3.0.0'
+    pod 'PSOperations', '~> 4.0.1'
     pod 'LogglyLogger-CocoaLumberjack', '~> 3.0'
     tunnel
     library

@@ -66,7 +66,7 @@
 		9BC215B91CB4DA9E002AADD1 /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215B81CB4DA9E002AADD1 /* Proxy.swift */; };
 		9BC215BB1CB4DAE6002AADD1 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215BA1CB4DAE6002AADD1 /* BaseModel.swift */; };
 		9BC215BD1CB4DE6B002AADD1 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215BC1CB4DE6B002AADD1 /* Rule.swift */; };
-		9BC215BF1CB4E06C002AADD1 /* RuleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215BE1CB4E06C002AADD1 /* RuleSet.swift */; };
+		9BC215BF1CB4E06C002AADD1 /* TRuleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215BE1CB4E06C002AADD1 /* TRuleSet.swift */; };
 		9BC215C11CB5083B002AADD1 /* ConfigurationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215C01CB5083B002AADD1 /* ConfigurationGroup.swift */; };
 		9BC215C71CB51148002AADD1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215C61CB51148002AADD1 /* Config.swift */; };
 		9BC215CC1CB5E584002AADD1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC215CB1CB5E584002AADD1 /* Manager.swift */; };
@@ -175,8 +175,6 @@
 		B83D3E7D1D2BA8C8007655CE /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83D3E7C1D2BA8C8007655CE /* Receipt.swift */; };
 		B84551401CF83D07005779CD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B845513F1CF83D07005779CD /* HomeVC.swift */; };
 		B84551421CF878BD005779CD /* ConfigGroupChooseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84551411CF878BD005779CD /* ConfigGroupChooseVC.swift */; };
-		B86B08EC1D17F85800613014 /* ShadowPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86B08E91D17F84900613014 /* ShadowPath.framework */; };
-		B86B08ED1D17FB9B00613014 /* ShadowPath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86B08E91D17F84900613014 /* ShadowPath.framework */; };
 		B87A043A1D193ABC001132F2 /* LoggerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A04391D193ABC001132F2 /* LoggerUtils.swift */; };
 		B87A72B41D433ACA006C2A1B /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87A72B31D433ACA006C2A1B /* NotificationHandler.swift */; };
 		B87B98041D3B423B00FA66BF /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B98031D3B423B00FA66BF /* PaddingLabel.swift */; };
@@ -185,11 +183,9 @@
 		B88096B21D0652F0008BEB87 /* RuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88096B11D0652F0008BEB87 /* RuleCell.swift */; };
 		B8822CCD1D2AA70A00AD252C /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = B8822CCC1D2AA70A00AD252C /* Receipt.m */; };
 		B8822CD31D2B81C400AD252C /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8822CD11D2B81C400AD252C /* libcrypto.a */; };
-		B8822CD41D2B81C400AD252C /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8822CD21D2B81C400AD252C /* libssl.a */; };
 		B88559EB1D21319D00B1243E /* YAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88559EA1D21319D00B1243E /* YAML.framework */; };
 		B88559EC1D21319D00B1243E /* YAML.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B88559EA1D21319D00B1243E /* YAML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B88559F01D21371A00B1243E /* PotatsoModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC6FFEA1CB28B4B00E5EA61 /* PotatsoModel.framework */; };
-		B88874491D18186100AEF002 /* ShadowPath.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B86B08E91D17F84900613014 /* ShadowPath.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B896A8401D548AAC009E4BF5 /* ICloudSetupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B896A83F1D548AAC009E4BF5 /* ICloudSetupOperation.swift */; };
 		B8A09D691D51B42B00A9A989 /* CloudKitRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A09D681D51B42B00A9A989 /* CloudKitRecord.swift */; };
 		B8A09D7B1D51B9A900A9A989 /* AlertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A09D741D51B9A900A9A989 /* AlertOperation.swift */; };
@@ -218,6 +214,7 @@
 		B8F784671D3678B400F02FF5 /* Settings.h in Headers */ = {isa = PBXBuildFile; fileRef = B8F784651D3678B400F02FF5 /* Settings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8F784681D3678B400F02FF5 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F784661D3678B400F02FF5 /* Settings.m */; };
 		B8F7AE3E1D5F178A005CA41E /* CloudSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7AE3D1D5F178A005CA41E /* CloudSetManager.swift */; };
+		EE407F56208DB3D200A148FF /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EE407F53208DB3D100A148FF /* libxml2.tbd */; };
 		FE9B3692D19B03821360B886 /* Pods_PotatsoLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF05C4CA29869A03E25A65 /* Pods_PotatsoLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -278,16 +275,16 @@
 			remoteGlobalIDString = 9BDA625A1CAE2576007F2581;
 			remoteInfo = PacketProcessor;
 		};
-		B86B08E81D17F84900613014 /* PBXContainerItemProxy */ = {
+		EE407F4C208DAF6400A148FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */;
+			containerPortal = EE407F47208DAF6400A148FF /* ShadowPath.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B8DEFD7B1CE9C923003FC706;
 			remoteInfo = ShadowPath;
 		};
-		B86B08EA1D17F84900613014 /* PBXContainerItemProxy */ = {
+		EE407F4E208DAF6400A148FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */;
+			containerPortal = EE407F47208DAF6400A148FF /* ShadowPath.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = B82847B41CEB14B000820456;
 			remoteInfo = ShadowPathDemo;
@@ -322,7 +319,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B88874491D18186100AEF002 /* ShadowPath.framework in Embed Frameworks */,
 				B88559EC1D21319D00B1243E /* YAML.framework in Embed Frameworks */,
 				9BC6FFF21CB28B4B00E5EA61 /* PotatsoModel.framework in Embed Frameworks */,
 				9B9B15C51C21595B000B6541 /* PotatsoLibrary.framework in Embed Frameworks */,
@@ -414,7 +410,7 @@
 		9BC215B81CB4DA9E002AADD1 /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
 		9BC215BA1CB4DAE6002AADD1 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		9BC215BC1CB4DE6B002AADD1 /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
-		9BC215BE1CB4E06C002AADD1 /* RuleSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuleSet.swift; sourceTree = "<group>"; };
+		9BC215BE1CB4E06C002AADD1 /* TRuleSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRuleSet.swift; sourceTree = "<group>"; };
 		9BC215C01CB5083B002AADD1 /* ConfigurationGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationGroup.swift; sourceTree = "<group>"; };
 		9BC215C61CB51148002AADD1 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		9BC215CB1CB5E584002AADD1 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
@@ -880,7 +876,6 @@
 		B83D3E7C1D2BA8C8007655CE /* Receipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		B845513F1CF83D07005779CD /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B84551411CF878BD005779CD /* ConfigGroupChooseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigGroupChooseVC.swift; sourceTree = "<group>"; };
-		B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShadowPath.xcodeproj; path = Library/ShadowPath/ShadowPath.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B87A04391D193ABC001132F2 /* LoggerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerUtils.swift; sourceTree = "<group>"; };
 		B87A72B31D433ACA006C2A1B /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		B87B98031D3B423B00FA66BF /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -890,7 +885,6 @@
 		B8822CCB1D2AA70A00AD252C /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
 		B8822CCC1D2AA70A00AD252C /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
 		B8822CD11D2B81C400AD252C /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "Library/ShadowPath/ShadowPath/shadowsocks-libev/libopenssl/lib/libcrypto.a"; sourceTree = "<group>"; };
-		B8822CD21D2B81C400AD252C /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "Library/ShadowPath/ShadowPath/shadowsocks-libev/libopenssl/lib/libssl.a"; sourceTree = "<group>"; };
 		B88559EA1D21319D00B1243E /* YAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAML.framework; path = Carthage/Build/iOS/YAML.framework; sourceTree = "<group>"; };
 		B896A83F1D548AAC009E4BF5 /* ICloudSetupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICloudSetupOperation.swift; sourceTree = "<group>"; };
 		B8A09D681D51B42B00A9A989 /* CloudKitRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitRecord.swift; sourceTree = "<group>"; };
@@ -922,6 +916,9 @@
 		B8F784661D3678B400F02FF5 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		B8F7AE3D1D5F178A005CA41E /* CloudSetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudSetManager.swift; sourceTree = "<group>"; };
 		DFAF05C4CA29869A03E25A65 /* Pods_PotatsoLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PotatsoLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE407F47208DAF6400A148FF /* ShadowPath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShadowPath.xcodeproj; path = Library/ShadowPath/ShadowPath.xcodeproj; sourceTree = SOURCE_ROOT; };
+		EE407F53208DB3D100A148FF /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		EE407F65208DE55900A148FF /* Potatso-Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Potatso-Swift.h"; sourceTree = "<group>"; };
 		F5F5D562F9497CEBA25A466F /* Pods-PotatsoLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PotatsoLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-PotatsoLibrary/Pods-PotatsoLibrary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -940,7 +937,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B86B08ED1D17FB9B00613014 /* ShadowPath.framework in Frameworks */,
+				EE407F56208DB3D200A148FF /* libxml2.tbd in Frameworks */,
 				9BC600241CB2921C00E5EA61 /* PotatsoBase.framework in Frameworks */,
 				9BDA62621CAE2576007F2581 /* PacketProcessor.framework in Frameworks */,
 				1ED659061E05E88C00D4BEE3 /* GameKit.framework in Frameworks */,
@@ -950,7 +947,6 @@
 				234575943B38F4EAD3E2B481 /* Pods_Potatso.framework in Frameworks */,
 				B8822CD31D2B81C400AD252C /* libcrypto.a in Frameworks */,
 				1ED659011E05C73100D4BEE3 /* CloudKit.framework in Frameworks */,
-				B8822CD41D2B81C400AD252C /* libssl.a in Frameworks */,
 				1ED66DEE1E05A72300638808 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -978,7 +974,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B86B08EC1D17F85800613014 /* ShadowPath.framework in Frameworks */,
 				9BC600361CB29AFF00E5EA61 /* PotatsoBase.framework in Frameworks */,
 				9BCE27AF1CAE535800B1E561 /* PacketProcessor.framework in Frameworks */,
 				9B87060D1C1DBDD400651424 /* libresolv.tbd in Frameworks */,
@@ -1097,6 +1092,7 @@
 				1ECA215E1E05E8C700B32187 /* Potatso.entitlements */,
 				9BC8589F1C33B00200992032 /* Potatso-Bridge-Header.h */,
 				9B0CFA0E1C1C0B1B007BD7C6 /* AppDelegate.swift */,
+				EE407F65208DE55900A148FF /* Potatso-Swift.h */,
 				9B1F745F1C2F84250028C1A6 /* AppInitializer.swift */,
 				B87A72B31D433ACA006C2A1B /* NotificationHandler.swift */,
 				9B2290FE1C8E5B9600EEC901 /* DataInitializer.swift */,
@@ -1208,6 +1204,7 @@
 		9B8705FB1C1D788F00651424 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
+				EE407F47208DAF6400A148FF /* ShadowPath.xcodeproj */,
 				1ECA21631E05EA6D00B32187 /* PacketTunnel.entitlements */,
 				9B8705FE1C1D788F00651424 /* PacketTunnelProvider.h */,
 				9B8705FF1C1D788F00651424 /* PacketTunnelProvider.m */,
@@ -1217,7 +1214,6 @@
 				9B87060A1C1DBCCD00651424 /* dns.m */,
 				B8EAC5921D40BF310046963C /* TunnelError.h */,
 				B8EAC5931D40BF310046963C /* TunnelError.m */,
-				B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */,
 				9B8706011C1D788F00651424 /* Info.plist */,
 				9B8705FC1C1D788F00651424 /* Supporting Files */,
 			);
@@ -1298,7 +1294,7 @@
 				9BC215BA1CB4DAE6002AADD1 /* BaseModel.swift */,
 				9BC215B81CB4DA9E002AADD1 /* Proxy.swift */,
 				9BC215BC1CB4DE6B002AADD1 /* Rule.swift */,
-				9BC215BE1CB4E06C002AADD1 /* RuleSet.swift */,
+				9BC215BE1CB4E06C002AADD1 /* TRuleSet.swift */,
 				9BC215C01CB5083B002AADD1 /* ConfigurationGroup.swift */,
 				B8D7F1831D518FF000B115F3 /* DBUtils.swift */,
 				9BC6FFEE1CB28B4B00E5EA61 /* Info.plist */,
@@ -2025,15 +2021,6 @@
 			name = Row;
 			sourceTree = "<group>";
 		};
-		B86B08E41D17F84900613014 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B86B08E91D17F84900613014 /* ShadowPath.framework */,
-				B86B08EB1D17F84900613014 /* ShadowPathDemo.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B8C256AC1D1A93CC0074D3B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2057,11 +2044,11 @@
 		C8B2149E8757C44C469576D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE407F53208DB3D100A148FF /* libxml2.tbd */,
 				1ED659051E05E88C00D4BEE3 /* GameKit.framework */,
 				1ED659001E05C73100D4BEE3 /* CloudKit.framework */,
 				1ED66DED1E05A72300638808 /* StoreKit.framework */,
 				B8822CD11D2B81C400AD252C /* libcrypto.a */,
-				B8822CD21D2B81C400AD252C /* libssl.a */,
 				B88559EA1D21319D00B1243E /* YAML.framework */,
 				9B87060C1C1DBDD400651424 /* libresolv.tbd */,
 				9B8193B31CBCFEE700BE320D /* NotificationCenter.framework */,
@@ -2074,6 +2061,15 @@
 				A27A0B817AADB557908316E3 /* Pods_PotatsoLibraryTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE407F48208DAF6400A148FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE407F4D208DAF6400A148FF /* ShadowPath.framework */,
+				EE407F4F208DAF6400A148FF /* ShadowPathDemo.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2326,7 +2322,7 @@
 					};
 					9B0CFA0A1C1C0B1A007BD7C6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = XGKHW634KL;
+						DevelopmentTeam = NR56G5F9RH;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2363,7 +2359,7 @@
 					};
 					9B8193B11CBCFEE700BE320D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = XGKHW634KL;
+						DevelopmentTeam = NR56G5F9RH;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2383,7 +2379,7 @@
 					};
 					9B8705F91C1D788F00651424 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = XGKHW634KL;
+						DevelopmentTeam = NR56G5F9RH;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2433,8 +2429,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B86B08E41D17F84900613014 /* Products */;
-					ProjectRef = B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */;
+					ProductGroup = EE407F48208DAF6400A148FF /* Products */;
+					ProjectRef = EE407F47208DAF6400A148FF /* ShadowPath.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -2453,18 +2449,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B86B08E91D17F84900613014 /* ShadowPath.framework */ = {
+		EE407F4D208DAF6400A148FF /* ShadowPath.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ShadowPath.framework;
-			remoteRef = B86B08E81D17F84900613014 /* PBXContainerItemProxy */;
+			remoteRef = EE407F4C208DAF6400A148FF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B86B08EB1D17F84900613014 /* ShadowPathDemo.app */ = {
+		EE407F4F208DAF6400A148FF /* ShadowPathDemo.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = ShadowPathDemo.app;
-			remoteRef = B86B08EA1D17F84900613014 /* PBXContainerItemProxy */;
+			remoteRef = EE407F4E208DAF6400A148FF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2596,13 +2592,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PotatsoLibrary-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		32AEA4C715C4F90A5C6FC894 /* [CP] Copy Pods Resources */ = {
@@ -2656,13 +2655,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PacketTunnel-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7F5FECF0328ABB93E7B81EF0 /* [CP] Copy Pods Resources */ = {
@@ -2671,9 +2673,108 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Potatso/Pods-Potatso-resources.sh",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HsUIResourceBundle.bundle",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ar.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/bg.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/bn.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ca.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/cs.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/da.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/de.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/el.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/en.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/es.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/fa.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/fi.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/fr.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/gu.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/he.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/hi.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/hr.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/hu.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/id.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/it.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ja.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/kn.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ko.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/lv.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ml.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/mr.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ms.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/nb-NO.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/nb.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/nl.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/pa.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/pl.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/pt.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ro.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ru.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/sk.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/sl.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/sv.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/ta.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/te.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/th.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/tr.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/uk.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/vi.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/zh-Hans.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSLocalization/zh-Hant.lproj",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSThemes/HelpshiftConfig.plist",
+				"${PODS_ROOT}/Helpshift/helpshift-sdk-ios-v5.6.1/HSThemes/HelpshiftConfigDark.plist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HsUIResourceBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ar.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bg.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/bn.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ca.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cs.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/da.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/de.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/el.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fa.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fi.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gu.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/he.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/hi.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/hr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/hu.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/id.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/it.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ja.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/kn.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ko.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lv.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ml.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ms.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nb-NO.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nb.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nl.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pa.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pl.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ro.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sk.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sl.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/sv.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ta.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/te.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/th.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/uk.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/vi.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HelpshiftConfig.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HelpshiftConfigDark.plist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2686,13 +2787,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PacketProcessor-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8533E9079437E99384941077 /* [CP] Copy Pods Resources */ = {
@@ -2773,13 +2877,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PotatsoLibraryTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B830CC631D2CF55A00FA8E37 /* Custom Data */ = {
@@ -2830,9 +2937,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PotatsoLibraryTests/Pods-PotatsoLibraryTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ICSMainFramework/ICSMainFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/KissXML/KissXML.framework",
+				"${BUILT_PRODUCTS_DIR}/MMWormhole/MMWormhole.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICSMainFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KissXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMWormhole.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2845,13 +2965,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Potatso-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA37A7904D75DAFB6182BD09 /* [CP] Check Pods Manifest.lock */ = {
@@ -2860,13 +2983,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TodayWidget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE2DCE01E31A764A094282A4 /* [CP] Embed Pods Frameworks */ = {
@@ -2875,9 +3001,56 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Potatso/Pods-Potatso-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Appirater/Appirater.framework",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
+				"${BUILT_PRODUCTS_DIR}/CallbackURLKit/CallbackURLKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/ICDMaterialActivityIndicatorView/ICDMaterialActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ICSMainFramework/ICSMainFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/ICSPullToRefresh/ICSPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/ISO8601DateFormatter/ISO8601DateFormatter.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/KissXML/KissXML.framework",
+				"${BUILT_PRODUCTS_DIR}/LogglyLogger-CocoaLumberjack/LogglyLogger_CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MMWormhole/MMWormhole.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PSOperations/PSOperations.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftColor/SwiftColor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Appirater.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CallbackURLKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICDMaterialActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICSMainFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICSPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISO8601DateFormatter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KissXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LogglyLogger_CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMWormhole.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PSOperations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftColor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2890,13 +3063,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PotatsoModel-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3045,7 +3221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC215BB1CB4DAE6002AADD1 /* BaseModel.swift in Sources */,
-				9BC215BF1CB4E06C002AADD1 /* RuleSet.swift in Sources */,
+				9BC215BF1CB4E06C002AADD1 /* TRuleSet.swift in Sources */,
 				9BC215B91CB4DA9E002AADD1 /* Proxy.swift in Sources */,
 				9BC215C11CB5083B002AADD1 /* ConfigurationGroup.swift in Sources */,
 				9BC215BD1CB4DE6B002AADD1 /* Rule.swift in Sources */,
@@ -3215,7 +3391,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.PotatsoLibraryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -3235,7 +3411,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.PotatsoLibraryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -3339,7 +3515,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = XGKHW634KL;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NR56G5F9RH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3368,14 +3545,15 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/ShadowPath/ShadowPath/libopenssl/lib",
 					"$(PODS_ROOT)/Helpshift/helpshift-sdk-ios-v5.6.1",
+					"$(PROJECT_DIR)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.potatso;
+				PRODUCT_BUNDLE_IDENTIFIER = yi.io.wasin.potatso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Potatso/Potatso-Bridge-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -3390,7 +3568,8 @@
 				CODE_SIGN_ENTITLEMENTS = Potatso/Potatso.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XGKHW634KL;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NR56G5F9RH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3415,13 +3594,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/ShadowPath/ShadowPath/libopenssl/lib",
 					"$(PODS_ROOT)/Helpshift/helpshift-sdk-ios-v5.6.1",
+					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.potatso;
+				PRODUCT_BUNDLE_IDENTIFIER = yi.io.wasin.potatso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Potatso/Potatso-Bridge-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -3463,7 +3643,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NR56G5F9RH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3471,12 +3651,12 @@
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.potatso.todaywidget;
+				PRODUCT_BUNDLE_IDENTIFIER = yi.io.wasin.potatso.todaywidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -3489,7 +3669,7 @@
 				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = NR56G5F9RH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -3497,12 +3677,12 @@
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.potatso.todaywidget;
+				PRODUCT_BUNDLE_IDENTIFIER = yi.io.wasin.potatso.todaywidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -3515,7 +3695,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = XGKHW634KL;
+				DEVELOPMENT_TEAM = NR56G5F9RH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3543,7 +3723,7 @@
 					"$(PROJECT_DIR)/PacketTunnel/Shadowsocks/libsodium-ios/lib",
 					"$(PROJECT_DIR)/PacketTunnel",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.potatso.tunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = yi.io.wasin.potatso.tunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3560,7 +3740,7 @@
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XGKHW634KL;
+				DEVELOPMENT_TEAM = NR56G5F9RH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3587,7 +3767,7 @@
 					"$(PROJECT_DIR)/PacketTunnel/Shadowsocks/libsodium-ios/lib",
 					"$(PROJECT_DIR)/PacketTunnel",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.potatso.tunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = yi.io.wasin.potatso.tunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3624,7 +3804,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3657,7 +3837,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.potatso.PotatsoLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3747,7 +3927,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3779,7 +3959,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.wasin.potatso.PotatsoModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

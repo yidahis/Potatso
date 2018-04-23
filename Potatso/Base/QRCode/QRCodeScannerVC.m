@@ -251,7 +251,7 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
 - (void)clickAlbumButton {
 
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        [self showTextHUD:NSLocalizedString(@"qrcode.denied", nil) dismissAfterDelay:1.0f];
+//        [self showTextHUD:NSLocalizedString(@"qrcode.denied", nil) dismissAfterDelay:1.0f];
         return;
     }
 
@@ -275,10 +275,10 @@ NSString * const CDZQRScanningErrorDomain = @"com.cdzombak.qrscanningviewcontrol
             }
             CDZWeakSelf wSelf = self;
             [self dismissViewControllerAnimated:NO completion:^{
-                [wSelf close];
+//                [wSelf close];
             }];
         } else {
-            [self showTextHUD:NSLocalizedString(@"qrcode.nocode", nil) dismissAfterDelay:1.0f];
+//            [self showTextHUD:NSLocalizedString(@"qrcode.nocode", nil) dismissAfterDelay:1.0f];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];

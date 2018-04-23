@@ -9,21 +9,77 @@
 import UIKit
 import Aspects
 
+class GodfatherSwizzing: NSObject {
+    
+    static let sourceJoinedCharacter: String = "-"
+    
+    func aopFunction() {}
+}
+
+class VCSwizzing: GodfatherSwizzing {
+    /// vc-viewdidappear
+    let viewdidAppearBlock: @convention(block) (_ id : AspectInfo)->Void = { aspectInfo in
+//        let event = AOPEventFilter.vcFilter(aspectInfo: aspectInfo, isAppear: true)
+//        GodfatherSwizzingPostnotification.postNotification(notiName: Notification.Name.InspurNotifications().vceventAction, userInfo: [AOPEventType.vceventAction:event])
+    }
+    
+    /// vc-viewdiddisappear
+    let viewdidDisappearBlock:@convention(block) (_ id: AspectInfo)->Void = {aspectInfo in
+//        let event = AOPEventFilter.vcFilter(aspectInfo: aspectInfo, isAppear: false)
+//        GodfatherSwizzingPostnotification.postNotification(notiName: Notification.Name.InspurNotifications().vceventAction, userInfo: [AOPEventType.vceventAction:event])
+    }
+    
+    /// vc-viewdidappear & diddisappear
+    override func aopFunction() {
+        do {
+            try UIViewController.aspect_hook(#selector(UIViewController.viewDidAppear(_:)),
+                                             with: .init(rawValue: 0),
+                                             usingBlock: self.viewdidAppearBlock)
+            try UIViewController.aspect_hook(#selector(UIViewController.viewDidDisappear(_:)),
+                                             with: .init(rawValue:0),
+                                             usingBlock: viewdidDisappearBlock)
+        }catch {}
+    }
+}
+
+
 extension UIViewController: UIGestureRecognizerDelegate  {
     
-    open override class func initialize() {
+    
+    class func hook() {
         
         // make sure this isn't a subclass
         if self !== UIViewController.self {
             return
         }
+        let viewDidLoadBlock: @convention(block) (_ id: AspectInfo)->Void = {aspectInfo in
+            
+            }
+        let viewWillAppearBlock: @convention(block) (_ id: AspectInfo)->Void = {aspectInfo in
+            if let vc = aspectInfo.instance() as? UIViewController, let navVC = vc.navigationController {
+                if !vc.isModal() {
+                    vc.showLeftBackButton(navVC.viewControllers.count > 1)
+                }
+            }
+        }
+        let viewDidAppearBlock: @convention(block) (_ id: AspectInfo)->Void = {aspectInfo in
+            if let vc = aspectInfo.instance() as? UIViewController, let navVC = vc.navigationController {
+                navVC.enableSwipeGesture(navVC.viewControllers.count > 1)
+            }
+        }
+        let viewWillDisappearBlock: @convention(block) (_ id: AspectInfo)->Void = {aspectInfo in
+            
+        }
         
-        {
-            UIViewController.aspectHook(#selector(viewDidLoad), swizzledSelector: #selector(ics_viewDidLoad))
-            UIViewController.aspectHook(#selector(viewWillAppear(_:)), swizzledSelector: #selector(ics_viewWillAppear(_:)))
-            UIViewController.aspectHook(#selector(viewDidAppear(_:)), swizzledSelector: #selector(ics_viewDidAppear(_:)))
-            UIViewController.aspectHook(#selector(viewWillDisappear(_:)), swizzledSelector: #selector(ics_viewWillDisappear(_:)))
-        }()
+        
+        
+        do {
+            try UIViewController.aspect_hook(#selector(viewDidLoad), with: AspectOptions.positionInstead, usingBlock: viewDidLoadBlock)
+            try UIViewController.aspect_hook(#selector(viewWillAppear), with: AspectOptions.positionInstead, usingBlock: viewWillAppearBlock)
+            try UIViewController.aspect_hook(#selector(viewDidAppear), with: AspectOptions.positionInstead, usingBlock: viewDidAppearBlock)
+            try UIViewController.aspect_hook(#selector(viewWillDisappear), with: AspectOptions.positionInstead, usingBlock: viewWillDisappearBlock)
+            
+        }catch {}
     }
     
     // MARK: - Method Swizzling
@@ -83,7 +139,7 @@ extension UIViewController: UIGestureRecognizerDelegate  {
         child.removeFromParentViewController()
     }
     
-    func pop() {
+    @objc func pop() {
         navigationController?.popViewController(animated: true)
     }
     

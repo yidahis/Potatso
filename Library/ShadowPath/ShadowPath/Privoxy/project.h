@@ -356,7 +356,7 @@ struct url_spec
 
    char  *port_list;   /**< List of acceptable ports, or NULL to match all ports */
 
-   regex_t *preg;      /**< Regex for matching path part                      */
+   regex_tt *preg;      /**< Regex for matching path part                      */
 };
 
 /**
@@ -371,7 +371,7 @@ struct pattern_spec
    union
    {
       struct url_spec url_spec;
-      regex_t *tag_regex;
+      regex_tt *tag_regex;
    } pattern;
 
    unsigned int flags; /**< Bitmap with various pattern properties. */

@@ -64,11 +64,11 @@ class HomePresenter: NSObject {
         vc.navigationController?.pushViewController(chooseVC, animated: true)
     }
 
-    func chooseConfigGroups() {
+    @objc func chooseConfigGroups() {
         ConfigGroupChooseManager.shared.show()
     }
 
-    func showAddConfigGroup() {
+    @objc func showAddConfigGroup() {
         var urlTextField: UITextField?
         let alert = UIAlertController(title: "Add Config Group".localized(), message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
@@ -101,7 +101,7 @@ class HomePresenter: NSObject {
 
     func addRuleSet() {
         let destVC: UIViewController
-        if defaultRealm.objects(RuleSet).count == 0 {
+        if defaultRealm.objects(TRuleSet.self).count == 0 {
             destVC = RuleSetConfigurationViewController() { [unowned self] ruleSet in
                 self.appendRuleSet(ruleSet)
             }
@@ -113,7 +113,7 @@ class HomePresenter: NSObject {
         vc.navigationController?.pushViewController(destVC, animated: true)
     }
 
-    func appendRuleSet(_ ruleSet: RuleSet?) {
+    func appendRuleSet(_ ruleSet: TRuleSet?) {
         guard let ruleSet = ruleSet, !group.ruleSets.contains(ruleSet) else {
             return
         }
@@ -150,7 +150,7 @@ class HomePresenter: NSObject {
         }
     }
 
-    func onVPNStatusChanged() {
+    @objc func onVPNStatusChanged() {
         self.delegate?.handleRefreshUI()
     }
 

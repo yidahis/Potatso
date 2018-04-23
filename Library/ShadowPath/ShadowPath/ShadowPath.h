@@ -2,8 +2,8 @@
 //  ShadowPath.h
 //  ShadowPath
 //
-//  Created by LEI on 5/16/16.
-//  Copyright © 2016 TouchingApp. All rights reserved.
+//  Created by yidahis on 2018/2/1.
+//  Copyright © 2018年 Maynard. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,6 +15,7 @@ FOUNDATION_EXPORT double ShadowPathVersionNumber;
 FOUNDATION_EXPORT const unsigned char ShadowPathVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ShadowPath/PublicHeader.h>
+
 
 #import "jcc.h"
 #import "project.h"

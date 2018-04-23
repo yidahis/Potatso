@@ -91,7 +91,7 @@ open class DBUtils {
         for proxy in mRealm.objects(Proxy.self) {
             proxy.synced = false
         }
-        for ruleset in mRealm.objects(RuleSet.self) {
+        for ruleset in mRealm.objects(TRuleSet.self) {
             ruleset.synced = false
         }
         for group in mRealm.objects(ConfigurationGroup.self) {
@@ -121,7 +121,7 @@ extension DBUtils {
             res = res.filter(filter)
         }
         if let sorted = sorted {
-            res = res.sorted(byProperty: sorted)
+            res = res.sorted(byKeyPath: sorted)
         }
         return res
     }
@@ -134,7 +134,7 @@ extension DBUtils {
         }
         var res = mRealm.objects(type).filter(mFilter)
         if let sorted = sorted {
-            res = res.sorted(byProperty: sorted)
+            res = res.sorted(byKeyPath: sorted)
         }
         return res.first
     }
@@ -167,7 +167,7 @@ extension DBUtils {
         let mRealm = currentRealm(nil)
         let filter = "synced == false && deleted == false"
         let proxies = mRealm.objects(Proxy.self).filter(filter).map({ $0 })
-        let rulesets = mRealm.objects(RuleSet.self).filter(filter).map({ $0 })
+        let rulesets = mRealm.objects(TRuleSet.self).filter(filter).map({ $0 })
         let groups = mRealm.objects(ConfigurationGroup.self).filter(filter).map({ $0 })
         var objects: [BaseModel] = []
         
@@ -177,7 +177,7 @@ extension DBUtils {
             objects.append(tObj as BaseModel)
         })
         
-        var iterator2: LazyMapIterator<RLMIterator<RuleSet>, RuleSet>? = nil
+        var iterator2: LazyMapIterator<RLMIterator<TRuleSet>, TRuleSet>? = nil
         iterator2 = rulesets.makeIterator()
         iterator2?.forEach({ (tObj) in
             objects.append(tObj as BaseModel)
@@ -195,7 +195,7 @@ extension DBUtils {
         let mRealm = currentRealm(nil)
         let filter = "synced == false && deleted == true"
         let proxies = mRealm.objects(Proxy.self).filter(filter).map({ $0 })
-        let rulesets = mRealm.objects(RuleSet.self).filter(filter).map({ $0 })
+        let rulesets = mRealm.objects(TRuleSet.self).filter(filter).map({ $0 })
         let groups = mRealm.objects(ConfigurationGroup.self).filter(filter).map({ $0 })
         var objects: [BaseModel] = []
         
@@ -205,7 +205,7 @@ extension DBUtils {
             objects.append(tObj as BaseModel)
         })
     
-        var iterator2: LazyMapIterator<RLMIterator<RuleSet>, RuleSet>? = nil
+        var iterator2: LazyMapIterator<RLMIterator<TRuleSet>, TRuleSet>? = nil
         iterator2 = rulesets.makeIterator()
         iterator2?.forEach({ (tObj) in
             objects.append(tObj as BaseModel)
@@ -246,7 +246,7 @@ extension ConfigurationGroup {
 
     public static func appendRuleSet(forGroupId groupId: String, rulesetId: String) throws {
         try DBUtils.modify(ConfigurationGroup.self, id: groupId) { (realm, group) -> Error? in
-            if let ruleset = DBUtils.get(rulesetId, type: RuleSet.self, inRealm: realm) {
+            if let ruleset = DBUtils.get(rulesetId, type: TRuleSet.self, inRealm: realm) {
                 group.ruleSets.append(ruleset)
             }
             return nil
